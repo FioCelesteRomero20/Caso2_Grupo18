@@ -96,36 +96,12 @@ namespace Caso2_Grupo18
                             totalPuntos_Grupo18 += puntos_Grupo18;
                         }
                     }
-                    // Vemos los puntos totales...
-                    lblPuntosTotales.Text = "Total de Puntos: " + totalPuntos_Grupo18.ToString();
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Se detectó un error en los datos cargados, " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        private void EliminarDatos(string nombreJuego_Grupo18)
-        {
-            try
-            {
-                string[] l_Grupo18 = File.ReadAllLines(FiloPath);
-                using (StreamWriter registro = new StreamWriter(FiloPath, false))
-                {
-                    foreach (string li_Grupo18 in l_Grupo18)
-                    {
-                        string[] s_partes_Grupo18 = li_Grupo18.Split('.');
-                        if (s_partes_Grupo18.Length == 4 && s_partes_Grupo18[0] != nombreJuego_Grupo18)
-                        {
-                            registro.WriteLine(li_Grupo18);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Se detectó un error en los datos para eliminar " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -163,9 +139,6 @@ namespace Caso2_Grupo18
                 //Registramos los datos en DateGriedView
                 dgvRegistroVideojuego.Rows.Add(eF_Grupo18.Nombre_Grupo18, eF_Grupo18.Fecha_Grupo18, eF_Grupo18.Resultado_Grupo18, eF_Grupo18.Puntos_Grupo18);
 
-                //Imprimimos con los puntos acumulados
-                lblPuntosTotales.Text = "Total de Puntos: " + totalPuntos_Grupo18.ToString();
-
                 //Limpiamos
                 textBox2.Text = "";
                 RButtGane.Checked = true;
@@ -176,31 +149,22 @@ namespace Caso2_Grupo18
                MessageBox.Show("Ingrese el nombre del videojuego", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
             }
         }
-
-
         private void RButtGane_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+        private void rbtnPerdió_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+            // Vemos los puntos totales...
+            lblPuntosTotales.Text = "Total de Puntos: " + totalPuntos_Grupo18.ToString();
+        }
         private void buttonSalir_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void textNewEliminar_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
