@@ -190,57 +190,7 @@ namespace Caso2_Grupo18
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string nombreJuego_Grupo18 = textNewEliminar.Text.Trim();
-                if (string.IsNullOrWhiteSpace(juegoEliminar_Grupo18))
-                {
-                    throw new ArgumentException();
-                }
-                bool juegoEncontrado_Grupo18 = false;
-                DataGridView filaEliminar_Grupo18 = null;
-
-                //Observamos cada fila
-                foreach (DataGridView fila in dgvRegistroVideojuego.Rows)
-                {
-                    string nombreJuego_Grupo18 = fila.Cells["Juego"].Value.ToString();
-                    //Comparamos
-                    if (nombreJuego_Grupo18.Equals(juegoEliminar_Grupo18, StringComparison.OrdinalIgnoreCase))
-                    {
-                        filaEliminar_Grupo18 = fila;
-                        juegoEncontrado_Grupo18 = true;
-                        break;
-                    }
-                    //Observamos la fila que se debe eliminar
-
-                }
-                if (juegoEncontrado_Grupo18)
-                {
-                    //Restamos los puntos
-                    int puntos_Grupo18 = Convert.ToInt32(filaEliminar_Grupo18.CellS["Puntos"].Value);
-                    totalPuntos_Grupo18 = puntos_Grupo18;
-
-                    //Eliminamos la fila
-                    dgvRegistroVideojuego.Rows.Remove(filaEliminar_Grupo18);
-
-                    //Funcion eliminar
-                    EliminarDatos(juegoEliminar_Grupo18);
-
-                    //Actualizamos los puntos
-                    lblPuntosTotales.Text = "Total de Puntos: " + totalPuntos_Grupo18.ToString();
-
-                    MessageBox.Show("El juego se elimino correctamente.", "Eliminar juego", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("El juego no se encontró en la lista.", "Eliminar juego", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                textNewEliminar.Text = "";
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Debe ingresar el nombre del juego a eliminar.", "Eliminar juego", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+           
         }
 
         private void textNewEliminar_TextChanged(object sender, EventArgs e)

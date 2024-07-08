@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonEliminar = new System.Windows.Forms.Button();
             this.dgvRegistroVideojuego = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonRegistrar = new System.Windows.Forms.Button();
             this.rbtnPerdió = new System.Windows.Forms.RadioButton();
             this.buttonSalir = new System.Windows.Forms.Button();
@@ -40,14 +48,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonQuitar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistroVideojuego)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonQuitar);
+            this.groupBox1.Controls.Add(this.buttonEliminar);
             this.groupBox1.Controls.Add(this.dgvRegistroVideojuego);
             this.groupBox1.Controls.Add(this.buttonRegistrar);
             this.groupBox1.Controls.Add(this.rbtnPerdió);
@@ -68,14 +75,89 @@
             this.groupBox1.Text = "Registro de videojuegos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // buttonEliminar
+            // 
+            this.buttonEliminar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.buttonEliminar.Location = new System.Drawing.Point(278, 193);
+            this.buttonEliminar.Name = "buttonEliminar";
+            this.buttonEliminar.Size = new System.Drawing.Size(83, 27);
+            this.buttonEliminar.TabIndex = 14;
+            this.buttonEliminar.Text = "Eliminar";
+            this.buttonEliminar.UseVisualStyleBackColor = false;
+            this.buttonEliminar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dgvRegistroVideojuego
             // 
-            this.dgvRegistroVideojuego.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvRegistroVideojuego.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistroVideojuego.Location = new System.Drawing.Point(17, 257);
+            this.dgvRegistroVideojuego.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvRegistroVideojuego.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvRegistroVideojuego.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            this.dgvRegistroVideojuego.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvRegistroVideojuego.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvRegistroVideojuego.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegistroVideojuego.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRegistroVideojuego.ColumnHeadersHeight = 30;
+            this.dgvRegistroVideojuego.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvRegistroVideojuego.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dgvRegistroVideojuego.EnableHeadersVisualStyles = false;
+            this.dgvRegistroVideojuego.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvRegistroVideojuego.Location = new System.Drawing.Point(29, 247);
             this.dgvRegistroVideojuego.Name = "dgvRegistroVideojuego";
-            this.dgvRegistroVideojuego.Size = new System.Drawing.Size(240, 150);
-            this.dgvRegistroVideojuego.TabIndex = 13;
+            this.dgvRegistroVideojuego.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRegistroVideojuego.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvRegistroVideojuego.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvRegistroVideojuego.Size = new System.Drawing.Size(427, 206);
+            this.dgvRegistroVideojuego.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "VideoJuego";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 109;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Fecha";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 70;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Gané o Perdí";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 116;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Puntos";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 74;
             // 
             // buttonRegistrar
             // 
@@ -177,21 +259,11 @@
             this.textBox1.Size = new System.Drawing.Size(187, 20);
             this.textBox1.TabIndex = 6;
             // 
-            // buttonQuitar
-            // 
-            this.buttonQuitar.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.buttonQuitar.Location = new System.Drawing.Point(278, 193);
-            this.buttonQuitar.Name = "buttonQuitar";
-            this.buttonQuitar.Size = new System.Drawing.Size(83, 27);
-            this.buttonQuitar.TabIndex = 14;
-            this.buttonQuitar.Text = "Quitar";
-            this.buttonQuitar.UseVisualStyleBackColor = false;
-            this.buttonQuitar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.ClientSize = new System.Drawing.Size(617, 531);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
@@ -219,7 +291,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button buttonQuitar;
+        private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 
