@@ -197,5 +197,10 @@ namespace Caso2_Grupo18
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
